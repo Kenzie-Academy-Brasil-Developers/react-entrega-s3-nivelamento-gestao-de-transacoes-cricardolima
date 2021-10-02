@@ -4,39 +4,19 @@ import { useState } from "react";
 export default function Form({
     setTransactions, 
     transactions,
-    exits,
-    setExities,
-    entries,  
-    setEntries}) {
+    })
+{
 
     const [name, setName] = useState("");
     const [quantity, setQuantity] = useState("");
     const [price, setPrice] = useState("");
 
     const handleForm = () => {
-        if (quantity > 0) {
-            setEntries([...entries, {
+        setTransactions([...transactions, {
                 name: name,
                 quantity: Number(quantity),
                 price: Number(price),
-            }])
-            setTransactions([...transactions, {
-                name: name,
-                quantity: Number(quantity),
-                price: Number(price),
-            }])
-        } else {
-            setExities([...exits, {
-                name: name,
-                quantity: Number(quantity),
-                price: Number(price),
-            }])
-            setTransactions([...transactions, {
-                name: name,
-                quantity: Number(quantity),
-                price: Number(price),
-            }])
-        }
+        }])
     }
 
     return (

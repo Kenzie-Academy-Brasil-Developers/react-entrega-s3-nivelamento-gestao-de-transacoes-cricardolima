@@ -5,10 +5,6 @@ import Form from './components/Form';
 
 function App() {
 
-  const [entries, setEntries] = useState([]);
-
-  const [exits, setExities] = useState([])
-
   const [transactions, setTransactions ] = useState([
     {name: "banana", quantity: 100, price: 5 },
     {name: "morango", quantity: -10, price: 2 },
@@ -22,16 +18,11 @@ function App() {
       <header className="App-header">
         <Form 
           setTransactions={setTransactions} 
-          transactions={transactions} 
-          entries={entries} 
-          setEntries={setEntries}
-          exits={exits} 
-          setExities={setExities} 
-        
+          transactions={transactions}      
         />
         <Display 
-          entries={entries}
-          exits={exits}
+          entries={transactions.filter(item => item.quantity > 0)}
+          exits={transactions.filter(item => item.quantity < 0)}
           transactions={transactions}
           showExit={showExit}
           setShowExit={setShowExit}        

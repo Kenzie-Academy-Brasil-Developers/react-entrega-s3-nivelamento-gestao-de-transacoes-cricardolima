@@ -7,7 +7,7 @@ export default function DisplayExities({exits}) {
             {exits.map((item, index) => {
                 return (
                     <div key={index}>
-                        <p>Produto: {item.name} Quantidade: {item.quantity} Preço: {item.price}</p>
+                        <p>Produto: {item.name}, Quantidade: {item.quantity}, Preço: {item.price}</p>
                     </div>
                 )
             })}
