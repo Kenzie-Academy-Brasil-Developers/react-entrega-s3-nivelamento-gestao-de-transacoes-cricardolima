@@ -17,7 +17,7 @@ export default function Display({
                     <button onClick={() => setShowExit(false)}>Mostrar Entradas</button>
                     <div>
                         <h1>Total de Saídas</h1>
-                        <p>Quantidade de frutas vendidas: {exits.reduce((acc, index) => (acc + index.quantity) * -1, 0)}</p>
+                        <p>Quantidade de frutas vendidas: {exits.reduce((acc, index) => acc + (index.quantity * -1), 0)}</p>
                         <p>Valor total: R$ {exits.reduce((acc, index) => acc + index.price, 0)}</p>
                     </div>
                 </>
